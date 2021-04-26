@@ -1,0 +1,19 @@
+{
+  "name": "frontend",
+  "version": "0.0.1",
+  "description": "this is what I can do in frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo Hello from frontend package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillotine666/frontend.git"
+  },
+  "author": "Malkov Matvey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guillotine666/frontend/issues"
+  },
+  "homepage": "https://github.com/guillotine666/frontend#readme"
+}
