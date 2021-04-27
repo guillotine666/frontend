@@ -4,7 +4,8 @@
   "description": "this is what I can do in frontend",
   "main": "index.js",
   "scripts": {
-    "test": "echo Hello from frontend package"
+    "test": "echo Hello from frontend package",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/guillotine666/frontend/issues"
   },
-  "homepage": "https://github.com/guillotine666/frontend#readme"
+  "homepage": "https://github.com/guillotine666/frontend#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
 }
