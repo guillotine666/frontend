@@ -1,13 +1,20 @@
-const firstTask = (a, b) => {
-  console.log(a + b);
-  console.log(a * b);
+export const printSumAndMulti = (a, b) => {
+  if (typeof a === "number" && typeof b === "number") {
+    console.log(a + b, a * b);
+  } else {
+    console.log("Некорректный ввод");
+  }
 };
 
-const secondTask = (str1, str2) => {
-  console.log(str1.length + str2.length);
+export const printSumOfTwoStrings = (str1, str2) => {
+  if (typeof str1 === "string" && typeof str2 === "string") {
+    console.log(str1.length + str2.length);
+  } else {
+    console.log("Некорректный ввод");
+  }
 };
 
-const thirdTask = () => {
+export const sumDigitOfNumber = () => {
   const userInput = prompt("Введите 3-х значное число:");
 
   if (userInput.match(/^[0-9]{3}$/)) {
@@ -16,6 +23,6 @@ const thirdTask = () => {
     }, 0);
     console.log(result);
   } else {
-    console.log("Некорректный ввод.");
+    console.log("Некорректный ввод");
   }
 };
