@@ -18,7 +18,9 @@ export const sumDigitOfNumber = () => {
   const userInput = prompt("Введите 3-х значное число:");
 
   if (userInput.match(/^[0-9]{3}$/)) {
-    const result = userInput.split("").reduce((sum, number) => sum + +number, 0);
+    const result = userInput
+      .split("")
+      .reduce((sum, number) => sum + +number, 0);
     console.log(result);
   } else {
     console.log("Некорректный ввод");
