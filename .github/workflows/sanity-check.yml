@@ -1,6 +1,12 @@
 name: PR Sanity Check
 
-on: pull_request
+on:
+  push:
+    branches-ignore:
+      - "master"
+  pull_request:
+    branches:
+      - "*"
 
 jobs:
   lint:
