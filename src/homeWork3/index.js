@@ -9,7 +9,7 @@ export const sumOfIntegersFrom50To100 = () => {
 
 export const multiplicationTableBySeven = () => {
   for (let i = 1; i <= 9; i += 1) {
-    console.log(i * 7);
+    console.log(`7 x ${i} = ${7 * i}`);
   }
 };
 
