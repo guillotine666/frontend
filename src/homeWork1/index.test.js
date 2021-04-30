@@ -74,13 +74,13 @@ describe("first home work - types", () => {
 
     test("console.log 3 for sumDigitOfNumber(111)", () => {
       jest.spyOn(window, "prompt").mockImplementation(() => "111");
-      sumDigitOfNumber(111);
+      sumDigitOfNumber();
       expect(console.log).toHaveBeenCalledWith(3);
     });
 
     test("console.log 'Некорректный ввод' for sumDigitOfNumber('qwe')", () => {
       jest.spyOn(window, "prompt").mockImplementation(() => "qwe");
-      sumDigitOfNumber("qwe");
+      sumDigitOfNumber();
       expect(console.log).toHaveBeenCalledWith("Некорректный ввод");
     });
   });

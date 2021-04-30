@@ -46,7 +46,7 @@ export const printMonthByNumber = () => {
       console.log("Декабрь");
       break;
     default:
-      console.log("Неверный ввод.");
+      console.log("Неверный ввод");
       break;
   }
 };
