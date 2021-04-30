@@ -52,8 +52,11 @@ export const printMonthByNumber = () => {
 };
 
 export const willCircleFitSquare = (circle, square) => {
-  const circleDiameter = 2 * Math.sqrt(circle / Math.PI);
-  const squareDiameter = Math.sqrt(2 * square);
+  if (typeof circle === "number" && typeof square === "number") {
+    const circleDiameter = 2 * Math.sqrt(circle / Math.PI);
+    const squareDiameter = Math.sqrt(2 * square);
 
-  return circleDiameter <= squareDiameter ? "Поместится" : "Не поместится";
+    return circleDiameter <= squareDiameter ? "Поместится" : "Не поместится";
+  }
+  return "Неверный ввод";
 };

@@ -1,4 +1,8 @@
-import { printMaxBetweenTwo, printMonthByNumber } from "./index";
+import {
+  printMaxBetweenTwo,
+  printMonthByNumber,
+  willCircleFitSquare,
+} from "./index";
 
 describe("second home work - conditions", () => {
   describe("first task printing maximum between two number", () => {
@@ -49,6 +53,28 @@ describe("second home work - conditions", () => {
         .mockImplementation(() => "not a number or string number");
       printMonthByNumber();
       expect(console.log).toHaveBeenCalledWith("Неверный ввод");
+    });
+  });
+
+  describe("third task return will circle fit the square", () => {
+    test("return Поместится for 4 and 10", () => {
+      const result = willCircleFitSquare(4, 10);
+      expect(result).toBe("Поместится");
+    });
+
+    test("return Не поместится for 4 and 2", () => {
+      const result = willCircleFitSquare(4, 2);
+      expect(result).toBe("Не поместится");
+    });
+
+    test("return Не поместится for '4' and 10", () => {
+      const result = willCircleFitSquare("4", 10);
+      expect(result).toBe("Неверный ввод");
+    });
+
+    test("return Не поместится for undefined and 2", () => {
+      const result = willCircleFitSquare(undefined, 2);
+      expect(result).toBe("Неверный ввод");
     });
   });
 });

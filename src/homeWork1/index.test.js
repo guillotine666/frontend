@@ -5,16 +5,16 @@ import {
 } from "./index";
 
 describe("first home work - types", () => {
+  const defalutConsoleLog = console.log;
+  beforeAll(() => {
+    console.log = jest.fn();
+  });
+
+  afterAll(() => {
+    console.log = defalutConsoleLog;
+  });
+
   describe("first task (console.log sum and multiply)", () => {
-    const defalutConsoleLog = console.log;
-    beforeAll(() => {
-      console.log = jest.fn();
-    });
-
-    afterAll(() => {
-      console.log = defalutConsoleLog;
-    });
-
     test("console.log 3 and 2 for printSumAndMulti(1, 2)", () => {
       printSumAndMulti(1, 2);
       expect(console.log).toHaveBeenCalledWith(3, 2);
@@ -37,15 +37,6 @@ describe("first home work - types", () => {
   });
 
   describe("second task sum length of two strings", () => {
-    const defalutConsoleLog = console.log;
-    beforeAll(() => {
-      console.log = jest.fn();
-    });
-
-    afterAll(() => {
-      console.log = defalutConsoleLog;
-    });
-
     test("console.log 5 for printSumOfTwoStrings('str', 'sa')", () => {
       printSumOfTwoStrings("str", "sa");
       expect(console.log).toHaveBeenCalledWith(5);
@@ -63,15 +54,6 @@ describe("first home work - types", () => {
   });
 
   describe("third task (console.log sum of the digits of the entered number)", () => {
-    const defalutConsoleLog = console.log;
-    beforeAll(() => {
-      console.log = jest.fn();
-    });
-
-    afterAll(() => {
-      console.log = defalutConsoleLog;
-    });
-
     test("console.log 3 for sumDigitOfNumber(111)", () => {
       jest.spyOn(window, "prompt").mockImplementation(() => "111");
       sumDigitOfNumber();
