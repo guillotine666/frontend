@@ -1,6 +1,6 @@
 export const user = {
   name: "John",
-  setAge () {
+  setAge() {
     this.age = +prompt("Введите возраст:", 0);
   },
 };
