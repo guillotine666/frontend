@@ -16,7 +16,7 @@ export const multiplicationTableBySeven = () => {
 export const arithmeticAverageOfOdd = () => {
   let sumOfOdds = 0;
   let counterOfOdds = 0;
-  const userInput = prompt("Введите число:");
+  const userInput = +prompt("Введите число:");
 
   for (let i = 1; i <= userInput; i += 1) {
     if (i % 2 !== 0) {
@@ -25,5 +25,9 @@ export const arithmeticAverageOfOdd = () => {
     }
   }
 
-  console.log(sumOfOdds / counterOfOdds);
+  if (counterOfOdds !== 0) {
+    console.log(sumOfOdds / counterOfOdds);
+  } else {
+    console.log("Неверный ввод");
+  }
 };
