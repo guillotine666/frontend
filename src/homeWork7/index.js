@@ -24,12 +24,10 @@ const handleButtonClick = () => {
   button.style.visibility = "hidden";
 };
 
-const main = () => {
+export const main = () => {
   const button = document.querySelector("button");
   const input = document.querySelector("input");
 
   input.oninput = handleInputChange;
   button.onclick = handleButtonClick;
 };
-
-main();
