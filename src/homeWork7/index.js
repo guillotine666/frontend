@@ -2,12 +2,9 @@ const PARAGRAPH_LIMIT = 5;
 
 const handleInputChange = ({ target }) => {
   const button = document.querySelector("button");
+  const value = target.value.trim();
 
-  if (target.value.trim()) {
-    button.style.visibility = "visible";
-  } else {
-    button.style.visibility = "hidden";
-  }
+  button.style.visibility = value ? "visible" : "hidden";
 };
 
 const handleButtonClick = () => {
@@ -27,7 +24,7 @@ const handleButtonClick = () => {
   button.style.visibility = "hidden";
 };
 
-const addLogic = () => {
+const main = () => {
   const button = document.querySelector("button");
   const input = document.querySelector("input");
 
@@ -35,4 +32,4 @@ const addLogic = () => {
   button.onclick = handleButtonClick;
 };
 
-addLogic();
+main();
