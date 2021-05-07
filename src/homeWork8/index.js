@@ -13,7 +13,7 @@ export const timesFromDayStart = () => {
   console.log(Math.floor((Date.now() - dateStart) / 60 / 1000));
 };
 
-export const younger = (firstDate, secondDate) => {
+export const whoIsYounger = (firstDate, secondDate) => {
   const firstDateObject = new Date(...firstDate.split(".").reverse());
   const secondDateObject = new Date(...secondDate.split(".").reverse());
 
