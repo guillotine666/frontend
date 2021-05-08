@@ -9,3 +9,16 @@ export const isRectangular = (...args) => {
 
   return hypotenuse ** 2 === sortedArgs[0] ** 2 + sortedArgs[1] ** 2;
 };
+
+export const printCandSOfCircle = () => {
+  const radius = +prompt("Enter radius:");
+
+  if (typeof radius === "number") {
+    console.log(
+      (Math.PI * radius * 2).toFixed(2),
+      (Math.PI * radius ** 2).toFixed(2)
+    );
+  } else {
+    console.log("Incorrect input");
+  }
+};

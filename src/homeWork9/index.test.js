@@ -1,4 +1,4 @@
-import { isRectangular } from "./index";
+import { isRectangular, printCandSOfCircle } from "./index";
 
 describe("home work 9 - math", () => {
   describe("first task - is triangle rectangular", () => {
@@ -15,6 +15,17 @@ describe("home work 9 - math", () => {
 
     test("return Incorrect input for 5,12,13,16", () => {
       expect(isRectangular(5, 12, 13, 16)).toBe("Incorrect input");
+    });
+  });
+
+  describe("second task - print square and circumference of circle", () => {
+    test("return 2 and 4 for ", () => {
+      printCandSOfCircle();
+      expect(printCandSOfCircle(3, 4, 5)).toBe(true);
+    });
+    test("return false for 3,12,13", () => {
+      printCandSOfCircle();
+      expect(printCandSOfCircle(3, 12, 13)).toBe(false);
     });
   });
 });
