@@ -13,40 +13,39 @@ describe("home work 8 - date", () => {
   describe("first task - day of the week", () => {
     test("return пятница for 07.05.2021", () => {
       jest.spyOn(window, "prompt").mockImplementation(() => "07.05.2021");
-      timesFromDayStart();
+      calculateDayOfWeek();
     });
 
     test("return воскресенье for 03.01.2021", () => {
       jest.spyOn(window, "prompt").mockImplementation(() => "03.01.2021");
-      timesFromDayStart();
+      calculateDayOfWeek();
     });
   });
 
   describe("second task - time past from start day (from 00:00 to now)", () => {
-    test("return пятница for 07.05.2021", () => {
-      calculateDayOfWeek();
-      expect(console.log).toHaveBeenCalledWith("пятница");
-    });
-
-    test("return воскресенье for 03.01.2021", () => {
-      calculateDayOfWeek();
-      expect(console.log).toHaveBeenCalledWith("воскресенье");
+    test("return ", () => {
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      timesFromDayStart();
+      expect(console.log).toHaveBeenCalledWith(
+        Math.floor((now - today) / 60 / 1000)
+      );
     });
   });
 
   describe("third task - day of the week", () => {
     test("return Вторая дата больше for 07.05.2021 and 03.01.2021", () => {
-      whoIsYounger();
+      whoIsYounger("07.05.2021", "03.01.2025");
       expect(console.log).toHaveBeenCalledWith("Вторая дата больше");
     });
 
     test("return Первая дата больше for 03.01.2021 and 03.01.2020", () => {
-      whoIsYounger();
+      whoIsYounger("03.01.2021", "03.01.2020");
       expect(console.log).toHaveBeenCalledWith("Первая дата больше");
     });
 
     test("return Даты равны for 03.01.2021 and 03.01.2021", () => {
-      whoIsYounger();
+      whoIsYounger("03.01.2021", "03.01.2021");
       expect(console.log).toHaveBeenCalledWith("Даты равны");
     });
   });
