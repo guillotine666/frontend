@@ -1,6 +1,6 @@
 export const isRectangular = (...args) => {
   if (args.length !== 3) {
-    return "Incorrect input";
+    return "Неверный ввод";
   }
 
   const sortedArgs = args.sort((a, b) => a - b);
@@ -13,12 +13,12 @@ export const isRectangular = (...args) => {
 export const printCandSOfCircle = () => {
   const radius = +prompt("Enter radius:");
 
-  if (typeof radius === "number") {
+  if (radius) {
     console.log(
       (Math.PI * radius * 2).toFixed(2),
       (Math.PI * radius ** 2).toFixed(2)
     );
   } else {
-    console.log("Incorrect input");
+    console.log("Неверный ввод");
   }
 };
