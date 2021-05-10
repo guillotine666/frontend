@@ -5,13 +5,13 @@ import {
 } from "./index";
 
 describe("second home work - conditions", () => {
+  const defalutConsoleLog = console.log;
   describe("first task printing maximum between two number", () => {
-    const defalutConsoleLog = console.log;
-    beforeAll(() => {
+    beforeEach(() => {
       console.log = jest.fn();
     });
 
-    afterAll(() => {
+    afterEach(() => {
       console.log = defalutConsoleLog;
     });
 
@@ -32,18 +32,17 @@ describe("second home work - conditions", () => {
   });
 
   describe("second task printing month by user input number", () => {
-    const defalutConsoleLog = console.log;
-    beforeAll(() => {
+    beforeEach(() => {
       console.log = jest.fn();
     });
 
-    afterAll(() => {
+    afterEach(() => {
       console.log = defalutConsoleLog;
     });
 
     test("print 4 for 1", () => {
       jest.spyOn(window, "prompt").mockImplementation(() => "1");
-      printMonthByNumber(1);
+      printMonthByNumber();
       expect(console.log).toHaveBeenCalledWith("Январь");
     });
 

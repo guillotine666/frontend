@@ -6,13 +6,13 @@
   "scripts": {
     "test": "jest",
     "lint": "prettier --check ./src && eslint .",
-    "lint:fix": "prettier --write ./src && eslint ./src --fix --color",
+    "lint:fix": "prettier --write ./src && eslint ./src --cache --fix",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
     "start": "parcel ./src/homeWork7/index.html"
   },
   "lint-staged": {
-    "*.js": "npm run lint:fix",
+    "*.js": "eslint --cache --fix",
     "*.{js, css,md,yml,html}": "prettier --write"
   },
   "repository": {

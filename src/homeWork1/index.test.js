@@ -6,11 +6,12 @@ import {
 
 describe("first home work - types", () => {
   const defalutConsoleLog = console.log;
-  beforeAll(() => {
+
+  beforeEach(() => {
     console.log = jest.fn();
   });
 
-  afterAll(() => {
+  afterEach(() => {
     console.log = defalutConsoleLog;
   });
 
