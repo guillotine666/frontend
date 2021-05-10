@@ -6,11 +6,12 @@ import {
 
 describe("third home work - loops", () => {
   const defalutConsoleLog = console.log;
-  beforeAll(() => {
+
+  beforeEach(() => {
     console.log = jest.fn();
   });
 
-  afterAll(() => {
+  afterEach(() => {
     console.log = defalutConsoleLog;
   });
 

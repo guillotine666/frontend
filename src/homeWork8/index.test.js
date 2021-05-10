@@ -2,11 +2,12 @@ import { calculateDayOfWeek, timesFromDayStart, whoIsYounger } from "./index";
 
 describe("home work 8 - date", () => {
   const defalutConsoleLog = console.log;
-  beforeAll(() => {
+
+  beforeEach(() => {
     console.log = jest.fn();
   });
 
-  afterAll(() => {
+  afterEach(() => {
     console.log = defalutConsoleLog;
   });
 
