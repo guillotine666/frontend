@@ -29,7 +29,11 @@ describe("home work 8 - date", () => {
 
   describe("second task - time past from start day (from 00:00 to now)", () => {
     test("return ", () => {
-      jest.spyOn(global.Date, "now").mockImplementationOnce(() => new Date("2021-05-18T01:00:00.000Z").valueOf());
+      jest
+        .spyOn(global.Date, "now")
+        .mockImplementationOnce(() =>
+          new Date("2021-05-18T01:00:00.000Z").valueOf()
+        );
       timesFromDayStart();
       expect(console.log).toHaveBeenCalledWith(360);
     });
