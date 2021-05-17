@@ -31,11 +31,9 @@ describe("home work 8 - date", () => {
     test("return ", () => {
       jest
         .spyOn(global.Date, "now")
-        .mockImplementationOnce(() =>
-          new Date("2021-05-18T01:00:00.000Z").valueOf()
-        );
+        .mockImplementation(() => new Date("2021-05-18T01:00:00.000+05:00"));
       timesFromDayStart();
-      expect(console.log).toHaveBeenCalledWith(360);
+      expect(console.log).toHaveBeenCalledWith(60);
     });
   });
 
