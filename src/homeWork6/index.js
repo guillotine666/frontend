@@ -27,11 +27,5 @@ export const pow = (a, x) => {
     return "Неверный ввод";
   }
 
-  let result = a;
-
-  for (let i = 1; i < x; i += 1) {
-    result *= a;
-  }
-
-  return result;
+  return a ** x;
 };

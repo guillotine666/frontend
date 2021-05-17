@@ -1,4 +1,8 @@
-import { calculateDayOfWeek, timesFromDayStart, whoIsYounger } from "./index";
+import {
+  calculateDayOfWeek,
+  timesFromDayStart,
+  whoIsYounger,
+} from "./index.js";
 
 describe("home work 8 - date", () => {
   const defalutConsoleLog = console.log;
@@ -25,12 +29,9 @@ describe("home work 8 - date", () => {
 
   describe("second task - time past from start day (from 00:00 to now)", () => {
     test("return ", () => {
-      const now = new Date();
-      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      jest.spyOn(global.Date, "now").mockImplementationOnce(() => new Date("2021-05-18T01:00:00.000Z").valueOf());
       timesFromDayStart();
-      expect(console.log).toHaveBeenCalledWith(
-        Math.floor((now - today) / 60 / 1000)
-      );
+      expect(console.log).toHaveBeenCalledWith(360);
     });
   });
 

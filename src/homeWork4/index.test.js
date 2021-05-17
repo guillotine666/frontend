@@ -1,4 +1,4 @@
-import { user, makeAdmin, returnAdminVariables } from "./index";
+import { user, makeAdmin, returnAdminVariables } from "./index.js";
 
 describe("fourth home work - loops", () => {
   const originalUser = { ...user };

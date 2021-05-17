@@ -2,7 +2,7 @@ import {
   printSumAndMulti,
   printSumOfTwoStrings,
   sumDigitOfNumber,
-} from "./index";
+} from "./index.js";
 
 describe("first home work - types", () => {
   const defalutConsoleLog = console.log;

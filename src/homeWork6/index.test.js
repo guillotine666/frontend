@@ -1,4 +1,4 @@
-import { diff, isWord, pow } from "./index";
+import { diff, isWord, pow } from "./index.js";
 
 describe("sixth homework", () => {
   describe("first task - diff function", () => {

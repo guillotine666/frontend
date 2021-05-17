@@ -1,4 +1,4 @@
-import { isDateOrEmailFormat } from "./index";
+import { isDateOrEmailFormat } from "./index.js";
 
 describe("homework 10 - regexp", () => {
   test.each(["24/04/24", "4/4/2024", "24.04.24", "04.4.2024"])(

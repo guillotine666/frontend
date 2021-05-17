@@ -1,9 +1,7 @@
 import fs from "fs";
-import { main } from "./index";
+import { main } from "./index.js";
 
 const html = fs.readFileSync("./src/homeWork7/index.html");
-
-jest.dontMock("fs");
 
 describe("test main logic", () => {
   let input;
@@ -11,17 +9,13 @@ describe("test main logic", () => {
   let collector;
 
   beforeEach(() => {
-    document.documentElement.innerHTML = html.toString();
+    document.documentElement.innerHTML = html;
 
     main();
 
     input = document.querySelector("input");
     button = document.querySelector("button");
     collector = document.querySelector(".collector");
-  });
-
-  afterEach(() => {
-    jest.resetModules();
   });
 
   test("button hidden when start", () => {

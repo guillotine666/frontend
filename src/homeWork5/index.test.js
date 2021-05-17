@@ -1,4 +1,4 @@
-import { sumOfElements, doubleElement, findMinAndMax } from "./index";
+import { sumOfElements, doubleElement, findMinAndMax } from "./index.js";
 
 describe("fifth homework", () => {
   describe("first task - sum of arrays elements", () => {

@@ -2,7 +2,7 @@ import {
   printMaxBetweenTwo,
   printMonthByNumber,
   willCircleFitSquare,
-} from "./index";
+} from "./index.js";
 
 describe("second home work - conditions", () => {
   const defalutConsoleLog = console.log;

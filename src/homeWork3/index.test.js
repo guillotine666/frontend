@@ -2,7 +2,7 @@ import {
   sumOfIntegersFrom50To100,
   multiplicationTableBySeven,
   arithmeticAverageOfOdd,
-} from "./index";
+} from "./index.js";
 
 describe("third home work - loops", () => {
   const defalutConsoleLog = console.log;

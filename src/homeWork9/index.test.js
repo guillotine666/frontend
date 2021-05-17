@@ -1,4 +1,4 @@
-import { isRectangular, printCandSOfCircle } from "./index";
+import { isRectangular, printCandSOfCircle } from "./index.js";
 
 describe("home work 9 - math", () => {
   describe("first task - is triangle rectangular", () => {
