@@ -8,9 +8,10 @@ export const calculateDayOfWeek = () => {
 };
 
 export const timesFromDayStart = () => {
-  const dateStart = new Date();
-  dateStart.setHours(0, 0, 0, 0);
-  console.log(Math.floor((Date.now() - dateStart) / 60 / 1000));
+  const d = new Date();
+  console.log(
+    (d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds()) / 60
+  );
 };
 
 export const whoIsYounger = (firstDate, secondDate) => {
