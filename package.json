@@ -4,7 +4,7 @@
   "description": "this is what I can do in frontend",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "TZ=UTC jest",
     "lint": "prettier --check ./src && eslint ./src",
     "lint:fix": "prettier --write ./src && eslint ./src --cache --fix",
     "lint-staged": "lint-staged",

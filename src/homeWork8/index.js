@@ -9,6 +9,7 @@ export const calculateDayOfWeek = () => {
 
 export const timesFromDayStart = () => {
   const d = new Date();
+  console.log(d);
   console.log(
     (d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds()) / 60
   );
