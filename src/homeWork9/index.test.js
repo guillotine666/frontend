@@ -2,19 +2,16 @@ import { isRectangular, printCandSOfCircle } from "./index.js";
 
 describe("home work 9 - math", () => {
   describe("first task - is triangle rectangular", () => {
-    test("return true for 3,4,5", () => {
-      expect(isRectangular(3, 4, 5)).toBe(true);
-    });
-    test("return false for 3,12,13", () => {
-      expect(isRectangular(3, 12, 13)).toBe(false);
-    });
+    const cases = [
+      [[3, 4, 5], true],
+      [[3, 12, 13], false],
+      [[3, 13], "Неверный ввод"],
+      [[5, 12, 13, 16], "Неверный ввод"],
+    ];
 
-    test("return Неверный ввод for 3,13", () => {
-      expect(isRectangular(3, 13)).toBe("Неверный ввод");
-    });
-
-    test("return Неверный ввод for 5,12,13,16", () => {
-      expect(isRectangular(5, 12, 13, 16)).toBe("Неверный ввод");
+    test.each(cases)("given %s, return %p", (args, expectResult) => {
+      const result = isRectangular(...args);
+      expect(result).toBe(expectResult);
     });
   });
 

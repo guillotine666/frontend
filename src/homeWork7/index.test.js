@@ -32,12 +32,10 @@ describe("test main logic", () => {
 
   test("remove first after 3 elements added", () => {
     const firstParagraph = collector.firstElementChild;
-    input.value = "first";
-    button.click();
-    input.value = "second";
-    button.click();
-    input.value = "third";
-    button.click();
+    for (let i = 1; i <= 3; i += 1) {
+      input.value = i;
+      button.click();
+    }
 
     expect(firstParagraph.innerHTML).not.toBe(
       collector.firstElementChild.innerHTML

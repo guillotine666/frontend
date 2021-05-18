@@ -2,33 +2,37 @@ import { sumOfElements, doubleElement, findMinAndMax } from "./index.js";
 
 describe("fifth homework", () => {
   describe("first task - sum of arrays elements", () => {
-    test("return 10 for sum of arrays only number elements", () => {
-      expect(sumOfElements([1, 2, 3, 4])).toBe(10);
-    });
+    const cases = [
+      [[1, 2, 3, 4], 10],
+      [[1, 2, "3", 4], 10],
+      [[1, 2, undefined, 4], NaN],
+    ];
 
-    test("return 10 for sum of arrays number elements with string", () => {
-      expect(sumOfElements([1, 2, "3", 4])).toBe(10);
-    });
-
-    test("return NaN for sum of arrays elements with undefined", () => {
-      expect(sumOfElements([1, 2, undefined, 4])).toBe(NaN);
+    test.each(cases)("given %p and return %p", (arr, expectResult) => {
+      const result = sumOfElements(arr);
+      expect(result).toBe(expectResult);
     });
   });
 
   describe("second task - double elements of array", () => {
-    test("return double", () => {
-      const array = [1, 2, 3, 4];
-      expect(doubleElement(array)).toEqual([2, 4, 6, 8]);
-    });
+    const cases = [
+      [
+        [1, 2, 3, 4],
+        [2, 4, 6, 8],
+      ],
+      [
+        [1, 2, "6", 4],
+        [2, 4, 12, 8],
+      ],
+      [
+        [1, 2, undefined, 4],
+        [2, 4, NaN, 8],
+      ],
+    ];
 
-    test("return double with string", () => {
-      const array = [1, 2, "6", 4];
-      expect(doubleElement(array)).toEqual([2, 4, 12, 8]);
-    });
-
-    test("return NaN", () => {
-      const array = [1, 2, undefined, 4];
-      expect(doubleElement(array)).toEqual([2, 4, NaN, 8]);
+    test.each(cases)("given %p and return %p", (arr, expectResult) => {
+      const result = doubleElement(arr);
+      expect(result).toEqual(expectResult);
     });
   });
 

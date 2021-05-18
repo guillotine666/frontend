@@ -16,42 +16,35 @@ describe("first home work - types", () => {
   });
 
   describe("first task (console.log sum and multiply)", () => {
-    test("console.log 3 and 2 for printSumAndMulti(1, 2)", () => {
-      printSumAndMulti(1, 2);
-      expect(console.log).toHaveBeenCalledWith(3, 2);
-    });
+    const cases = [
+      [1, 2, 3, 2],
+      [-2, 0, -2, -0],
+      [-2, undefined, "Некорректный ввод"],
+      [-2, null, "Некорректный ввод"],
+    ];
 
-    test("console.log -2 and -0 for printSumAndMulti(-2, 0)", () => {
-      printSumAndMulti(-2, 0);
-      expect(console.log).toHaveBeenCalledWith(-2, -0);
-    });
-
-    test("console.log Некорректный ввод for printSumAndMulti(-2, undefined)", () => {
-      printSumAndMulti(-2, undefined);
-      expect(console.log).toHaveBeenCalledWith("Некорректный ввод");
-    });
-
-    test("console.log Некорректный ввод for printSumAndMulti(-2, null)", () => {
-      printSumAndMulti(-2, null);
-      expect(console.log).toHaveBeenCalledWith("Некорректный ввод");
-    });
+    test.each(cases)(
+      "given %p and %p as arguments, returns %p",
+      (firstArg, secondArg, ...expectedResult) => {
+        printSumAndMulti(firstArg, secondArg);
+        expect(console.log).toHaveBeenCalledWith(...expectedResult);
+      }
+    );
   });
 
   describe("second task sum length of two strings", () => {
-    test("console.log 5 for printSumOfTwoStrings('str', 'sa')", () => {
-      printSumOfTwoStrings("str", "sa");
-      expect(console.log).toHaveBeenCalledWith(5);
-    });
-
-    test("console.log 'Некорректный ввод' for printSumOfTwoStrings(123, 'cds')", () => {
-      printSumOfTwoStrings(123, "cds");
-      expect(console.log).toHaveBeenCalledWith("Некорректный ввод");
-    });
-
-    test("console.log 13 for printSumOfTwoStrings('null', 'undefined')", () => {
-      printSumOfTwoStrings("null", "undefined");
-      expect(console.log).toHaveBeenCalledWith(13);
-    });
+    const cases = [
+      ["str", "sa", 5],
+      [123, "cds", "Некорректный ввод"],
+      ["null", "undefined", 13],
+    ];
+    test.each(cases)(
+      "given %p and %p as argument, return %p",
+      (firstArg, secondArg, expectedResult) => {
+        printSumOfTwoStrings(firstArg, secondArg);
+        expect(console.log).toHaveBeenCalledWith(expectedResult);
+      }
+    );
   });
 
   describe("third task (console.log sum of the digits of the entered number)", () => {

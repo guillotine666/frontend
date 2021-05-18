@@ -14,30 +14,31 @@ describe("sixth homework", () => {
   });
 
   describe("second task - isWord function", () => {
-    test('return true for "qweqwe"', () => {
-      expect(isWord("qweqwe")).toBe(true);
-    });
+    const cases = [
+      ["qweqwe", true],
+      ["qwe qwe", false],
+      [undefined, "Неверный ввод"],
+    ];
 
-    test('return false for "qwe qwe"', () => {
-      expect(isWord("qwe qwe")).toBe(false);
-    });
-
-    test("return Неверный ввод for undefined", () => {
-      expect(isWord(undefined)).toBe("Неверный ввод");
+    test.each(cases)("given %s, return %p", (str, expectResult) => {
+      const result = isWord(str);
+      expect(result).toBe(expectResult);
     });
   });
 
   describe("third task - pow function", () => {
-    test("return 1 for 1 and 10", () => {
-      expect(pow(1, 10)).toBe(1);
-    });
+    const cases = [
+      [1, 10, 1],
+      [2, 10, 1024],
+      ["2", 10, "Неверный ввод"],
+    ];
 
-    test("return 1024 for 2 and 10", () => {
-      expect(pow(2, 10)).toBe(1024);
-    });
-
-    test("return Неверный ввод for undefined", () => {
-      expect(pow("2", 10)).toBe("Неверный ввод");
-    });
+    test.each(cases)(
+      "given %p and %p, return %p",
+      (num, degree, expectResult) => {
+        const result = pow(num, degree);
+        expect(result).toBe(expectResult);
+      }
+    );
   });
 });
